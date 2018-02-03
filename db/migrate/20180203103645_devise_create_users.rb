@@ -8,8 +8,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.string  :username,      default: ''
       t.string  :first_name,    default: ''
       t.string  :last_name,     default: ''
-      t.date    :date_of_birth
+      t.date    :birthday
       t.integer :role,          default: 0, null: false
+      t.integer :status,        default: 0, null: false
       t.integer :gender
 
       ## Database authenticatable
