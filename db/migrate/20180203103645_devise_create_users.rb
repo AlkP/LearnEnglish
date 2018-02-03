@@ -3,11 +3,14 @@
 class DeviseCreateUsers < ActiveRecord::Migration[5.1]
   def change
     create_table :users do |t|
-      t.string  :phone,         default: ''
-      t.string  :telegram_id,   default: ''
+      t.string  :phone,         default: '', null: false
+      t.integer :telegram_id,   default: ''
+      t.string  :username,      default: ''
       t.string  :first_name,    default: ''
       t.string  :last_name,     default: ''
-      t.date    :date_of_employment
+      t.date    :date_of_birth
+      t.integer :role,          default: 0, null: false
+      t.integer :gender
 
       ## Database authenticatable
       t.string :email,              null: false, default: ""
@@ -41,6 +44,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
 
       t.timestamps null: false
     end
+    add_index :users, :phone,                 unique: true
+    add_index :users, :telegram_id,           unique: true
     # add_index :users, :email,                unique: true
     # add_index :users, :reset_password_token, unique: true
     # add_index :users, :confirmation_token,   unique: true
