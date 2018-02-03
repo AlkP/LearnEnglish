@@ -27,4 +27,18 @@ module ApplicationHelper
       content_tag :a, name, href: link
     end
   end
+
+  def link_to_sort(sort)
+    class_name = 'glyphicon-title glyphicon'
+    if sort.to_sym == session.try(:[], controller_name).try(:[], 'sort').try(:to_sym)
+      if session.try(:[], controller_name).try(:[], 'index') == 'asc'
+        class_name += ' glyphicon-sort-by-attributes'
+      else
+        class_name += ' glyphicon-sort-by-attributes-alt'
+      end
+    else
+      class_name += ' glyphicon-sort'
+    end
+    content_tag :a, '', class: class_name, href: "#{users_path}?sort=#{sort}", 'data-remote': true
+  end
 end

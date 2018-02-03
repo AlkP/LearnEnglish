@@ -14,3 +14,10 @@ en:
     sessions:
       new:
         login: 'Log In'
+    registrations:
+      edit:
+        title: 'Edit '
+        update: 'Update'
+        back: 'Back'
+        alert_upd_password: "leave blank if you don't want to change it"
+        alert_cur_password: 'we need your current password to confirm your changes'
