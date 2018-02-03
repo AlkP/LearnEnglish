@@ -1,0 +1,19 @@
+.col-sm-offset-4.col-sm-8
+  %h2= t('.login')
+= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-horizontal', role: 'form' }) do |f|
+  .form-group
+    = f.label :phone, class: 'col-sm-4 control-label'
+    .col-sm-8
+      = f.phone_field :phone, autofocus: true, autocomplete: "phone", class: 'form-control'
+  .form-group
+    = f.label :password, class: 'col-sm-4 control-label'
+    .col-sm-8
+      = f.password_field :password, autocomplete: "off", class: 'form-control'
+  - if devise_mapping.rememberable?
+    .col-sm-offset-4.col-sm-8
+      = f.check_box :remember_me
+      = f.label :remember_me
+  .form-group
+    .col-sm-4
+    .col-sm-8
+      = f.submit t('.login')
