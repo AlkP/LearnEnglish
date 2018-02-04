@@ -39,6 +39,6 @@ module ApplicationHelper
     else
       class_name += ' glyphicon-sort'
     end
-    content_tag :a, '', class: class_name, href: "#{users_path}?sort=#{sort}", 'data-remote': true
+    content_tag :a, '', class: class_name, href: "#{controller_name}?sort=#{sort}", 'data-remote': true
   end
 end

@@ -1,0 +1,12 @@
+%tr
+  %th
+    = link_to '', '?reset=true', class: 'glyphicon glyphicon-remove-circle red', remote: true
+  %th
+    = link_to_sort('category')
+    = t('.category')
+  %th
+    = link_to_sort('word')
+    = t('.word')
+  %th
+    = link_to_sort('translate')
+    = t('.translate')

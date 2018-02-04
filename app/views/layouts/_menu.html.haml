@@ -10,6 +10,8 @@
   %div{ class: 'collapse navbar-collapse', id: 'bs-example-navbar-collapse-1'}
     %ul.nav.navbar-nav
       = menu_item('Users', users_path)
+    %ul.nav.navbar-nav
+      = menu_item('Dictionaries', dictionaries_path)
     %ul{ class: 'nav navbar-nav navbar-right' }
       %li.dropdown
         - if current_user
