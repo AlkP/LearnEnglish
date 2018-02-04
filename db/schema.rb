@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180203155958) do
+ActiveRecord::Schema.define(version: 20180203175809) do
+
+  create_table "dictionaries", force: :cascade do |t|
+    t.integer "language", default: 0, null: false
+    t.integer "category", default: 0, null: false
+    t.string "word"
+    t.string "translate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "families", force: :cascade do |t|
     t.integer "parent_id"
