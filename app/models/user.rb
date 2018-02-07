@@ -13,4 +13,7 @@ class User < ApplicationRecord
   has_many :parents,  class_name: 'User', foreign_key: 'parent_id', through: :families_parent
   has_many :children, class_name: 'User', foreign_key: 'child_id',  through: :families_child
 
+  def self.find_by_telegram_id(id)
+    where("status = ? and telegram_id = ?", 0, id).first
+  end
 end

@@ -1,5 +1,14 @@
 
 en:
+  not_authorized: 'Your are not authorized! Send your contact to start use me. 👇'
+  send_phone:     'Send your contact'
+  your_contact: "Hello, %{first_name}! To access the site, use phone/password: %{phone}/%{password}.
+For start use /start"
+  current_word: "Your current word: %{word}"
+  current_translate: "Your are not translate: %{word}"
+  next_word: "Your next word: %{word}"
+  right: 'You right'
+  wrong: 'You made a mistake'
   views:
     pagination:
       first: '<<'

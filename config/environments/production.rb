@@ -1,4 +1,6 @@
 Rails.application.configure do
+  config.telegram_updates_controller.session_store = :memory_store
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
