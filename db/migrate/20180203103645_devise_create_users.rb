@@ -3,15 +3,16 @@
 class DeviseCreateUsers < ActiveRecord::Migration[5.1]
   def change
     create_table :users do |t|
-      t.string  :phone,         default: '', null: false
-      t.integer :telegram_id,   default: '', limit: 6
+      t.string  :phone,         default: '',  null: false
+      t.integer :telegram_id,   default: '',  limit: 6
       t.string  :username,      default: ''
       t.string  :first_name,    default: ''
       t.string  :last_name,     default: ''
       t.date    :birthday
-      t.integer :role,          default: 0, null: false
-      t.integer :status,        default: 0, null: false
+      t.integer :role,          default: 0,   null: false
+      t.integer :status,        default: 0,   null: false
       t.integer :gender
+      t.integer :study,         default: 4,   limit: 1
 
       ## Database authenticatable
       t.string :email,              null: false, default: ""
