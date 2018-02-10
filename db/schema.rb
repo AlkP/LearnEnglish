@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180203175809) do
+ActiveRecord::Schema.define(version: 20180209201658) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "day_dictionaries", force: :cascade do |t|
+    t.bigint "dictionary_id"
+    t.bigint "user_id"
+    t.date "date"
+    t.integer "wrong", limit: 2, default: 0, null: false
+    t.integer "successful", limit: 2, default: 0, null: false
+    t.index ["dictionary_id"], name: "index_day_dictionaries_on_dictionary_id"
+    t.index ["user_id"], name: "index_day_dictionaries_on_user_id"
+  end
 
   create_table "dictionaries", force: :cascade do |t|
     t.integer "language", default: 0, null: false
+    t.integer "vocabulary", default: 0, null: false
     t.integer "category", default: 0, null: false
     t.string "word"
     t.string "translate"
@@ -32,7 +46,7 @@ ActiveRecord::Schema.define(version: 20180203175809) do
 
   create_table "users", force: :cascade do |t|
     t.string "phone", default: "", null: false
-    t.integer "telegram_id", limit: 6
+    t.bigint "telegram_id"
     t.string "username", default: ""
     t.string "first_name", default: ""
     t.string "last_name", default: ""
@@ -40,6 +54,7 @@ ActiveRecord::Schema.define(version: 20180203175809) do
     t.integer "role", default: 0, null: false
     t.integer "status", default: 0, null: false
     t.integer "gender"
+    t.integer "study", limit: 2, default: 4
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.integer "sign_in_count", default: 0, null: false
