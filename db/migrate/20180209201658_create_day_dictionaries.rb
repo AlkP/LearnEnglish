@@ -5,8 +5,8 @@ class CreateDayDictionaries < ActiveRecord::Migration[5.1]
       t.references :user
 
       t.date    :date
-      t.integer :wrong,       default:0,  null: false,  limit:  1
-      t.integer :successful,  default:0,  null: false,  limit:  1
+      t.integer :wrong,       default:  0,  null: false,  limit:  1
+      t.integer :successful,  default:  0,  null: false,  limit:  1
     end
   end
 end
