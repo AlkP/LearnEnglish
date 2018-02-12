@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
   resources :dictionaries
+
+  post '/upload_csv', to: 'dictionaries#upload'
 end

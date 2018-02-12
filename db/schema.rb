@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20180209201658) do
     t.integer "category", default: 0, null: false
     t.string "word"
     t.string "translate"
+    t.string "transcription"
+    t.string "voice"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

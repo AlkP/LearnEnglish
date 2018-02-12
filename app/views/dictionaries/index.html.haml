@@ -1,3 +1,10 @@
+
+= button_tag 'Обработать CSV', class: "btn btn-default", onclick: "$('.upload-csv').click();"
+
+= form_tag('/upload_csv', :multipart => true, hidden: true) do
+  = file_field_tag 'upload_csv', class: 'upload-csv', onchange: "$('.btn-upload-csv').click();"
+  = submit_tag 'submit', class: 'btn-upload-csv'
+
 %table.table.table-striped.dictionaries-table
   = render 'dictionaries/dictionaries_table'
 

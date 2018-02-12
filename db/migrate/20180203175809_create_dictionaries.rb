@@ -6,6 +6,8 @@ class CreateDictionaries < ActiveRecord::Migration[5.1]
       t.integer :category,    default: 0, null: false
       t.string  :word
       t.string  :translate
+      t.string  :transcription
+      t.string  :voice
 
       t.timestamps
     end
